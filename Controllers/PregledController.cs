@@ -105,8 +105,8 @@ public class PregledController : ControllerBase
             //     Console.WriteLine($"Datum: {appointment.Datum}, Opis: {appointment.Opis}"); 
             // }
 
-            // var availableTimeSlots = allTimeSlots.Except(existingAppointments.Select(appointment => appointment.Datum.ToLocalTime().ToString("HH:mm")));
-            var availableTimeSlots = allTimeSlots.Except(existingAppointments.Select(appointment => appointment.Datum.ToString("HH:mm")));
+            var availableTimeSlots = allTimeSlots.Except(existingAppointments.Select(appointment => appointment.Datum.ToUniversalTime().ToString("HH:mm")));
+            // var availableTimeSlots = allTimeSlots.Except(existingAppointments.Select(appointment => appointment.Datum.ToString("HH:mm")));
 
             return Ok(availableTimeSlots);
         }
@@ -130,7 +130,7 @@ public class PregledController : ControllerBase
         {
             IdStomatologa = idStomatologa,
             IdPacijenta = idPacijenta,
-            Datum = datum,
+            Datum = datum.ToLocalTime(),
             Opis = opis,
             Status = StatusPregleda.Predstojeci
         };
@@ -181,6 +181,31 @@ public class PregledController : ControllerBase
             IdStomatologa = existingPregled.IdStomatologa,
             IdPacijenta = existingPregled.IdPacijenta,
             Datum = datum,
+            Opis = opis,
+            Status = existingPregled.Status
+        };
+
+        pregledService.Update(id, pregled);
+
+        return NoContent();
+    }
+
+    [HttpPut("{id}/{opis}")]
+    public ActionResult Put(ObjectId id, string opis)
+    {
+        var existingPregled = pregledService.Get(id);
+
+        if (existingPregled == null)
+        {
+            return NotFound($"Pregled with Id = {id} not found");
+        }
+
+        var pregled = new Pregled
+        {
+            Id = existingPregled.Id,
+            IdStomatologa = existingPregled.IdStomatologa,
+            IdPacijenta = existingPregled.IdPacijenta,
+            Datum = existingPregled.Datum,
             Opis = opis,
             Status = existingPregled.Status
         };

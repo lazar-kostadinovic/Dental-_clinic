@@ -54,3 +54,4 @@ C:\Users\Lazar\Desktop\StomatoloskaOrdinacija\bin\Debug\net8.0\Client\tsconfig.j
 C:\Users\Lazar\Desktop\StomatoloskaOrdinacija\bin\Debug\net8.0\Client\tsconfig.spec.json
 C:\Users\Lazar\Desktop\StomatoloskaOrdinacija\bin\Debug\net8.0\package-lock.json
 C:\Users\Lazar\Desktop\StomatoloskaOrdinacija\bin\Debug\net8.0\package.json
+C:\Users\Lazar\Desktop\StomatoloskaOrdinacija\obj\Debug\net8.0\StomatoloskaOrdinacija.sourcelink.json
