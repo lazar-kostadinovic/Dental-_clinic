@@ -31,16 +31,6 @@ namespace StomatoloskaOrdinacija.Services
             return _pregledi.Find(pregled => pregled.Id == id).FirstOrDefault();
         }
 
-        public Pregled GetByTimestamp(long timestamp)
-        {
-            var targetDateTime = DateTimeOffset.FromUnixTimeSeconds(timestamp).UtcDateTime;
-
-            var pregledi = _pregledi.Find(FilterDefinition<Pregled>.Empty).ToList();
-
-            return pregledi.FirstOrDefault(pregled => pregled.Id.CreationTime == targetDateTime);
-        }
-
-
         public void Remove(ObjectId id)
         {
             _pregledi.DeleteOne(pregled => pregled.Id == id);

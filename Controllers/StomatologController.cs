@@ -101,21 +101,6 @@ public class StomatologController : ControllerBase
         return stomatologDTO;
     }
 
-
-
-    [HttpGet("byTimestamp/{timestamp}")]
-    public ActionResult<Stomatolog> GetByTimestamp(long timestamp)
-    {
-        var stomatolog = stomatologService.GetByTimestamp(timestamp);
-
-        if (stomatolog == null)
-        {
-            return NotFound($"Stomatolog with timestamp = {timestamp} not found");
-        }
-
-        return stomatolog;
-    }
-
     [AllowAnonymous]
     [HttpGet("GetStomatologByEmail/{email}")]
     public async Task<IActionResult> GetStomatologByEmail(string email)

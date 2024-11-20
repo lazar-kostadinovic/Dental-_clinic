@@ -7,7 +7,6 @@ namespace StomatoloskaOrdinacija.Services
     {
         List<Stomatolog> Get();
         Stomatolog Get(ObjectId id);
-        Stomatolog GetByTimestamp(long timestamp);
         Task<Stomatolog> GetStomatologByEmailAsync(string email);
         List<Stomatolog> GetBySpecijalizacija(Specijalizacija specijalizacija);
         Stomatolog GetAndUpdate(ObjectId stomatologId, ObjectId pregledId);

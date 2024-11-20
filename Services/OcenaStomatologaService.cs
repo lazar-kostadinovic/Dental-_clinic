@@ -31,15 +31,6 @@ namespace StomatoloskaOrdinacija.Services
             return _ocene.Find(ocena => ocena.Id == id).FirstOrDefault();
         }
 
-        public OcenaStomatologa GetByTimestamp(long timestamp)
-        {
-            var targetDateTime = DateTimeOffset.FromUnixTimeSeconds(timestamp).UtcDateTime;
-
-            var ocene = _ocene.Find(FilterDefinition<OcenaStomatologa>.Empty).ToList();
-
-            return ocene.FirstOrDefault(pregled => pregled.Id.CreationTime == targetDateTime);
-        }
-
         public void Remove(ObjectId id)
         {
             _ocene.DeleteOne(ocena => ocena.Id == id);

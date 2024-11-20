@@ -70,21 +70,6 @@ public class PregledController : ControllerBase
         return pregledDTO;
     }
 
-
-    [HttpGet("byTimestamp/{timestamp}")]
-    public ActionResult<Pregled> GetByTimestamp(long timestamp)
-    {
-        pregledService.UpdatePregledStatuses();
-        var pregled = pregledService.GetByTimestamp(timestamp);
-
-        if (pregled == null)
-        {
-            return NotFound($"Pregled with timestamp = {timestamp} not found");
-        }
-
-        return pregled;
-    }
-
     [HttpGet("availableTimeSlots/{idStomatologa}/{datum}")]
     public ActionResult<IEnumerable<string>> GetAvailableTimeSlots(ObjectId idStomatologa, DateTime datum)
     {

@@ -71,20 +71,6 @@ public class PacijentController : ControllerBase
         return pacijentDTO;
     }
 
-
-    [HttpGet("byTimestamp/{timestamp}")]
-    public ActionResult<Pacijent> GetByTimestamp(long timestamp)
-    {
-        var pacijent = pacijentService.GetByTimestamp(timestamp);
-
-        if (pacijent == null)
-        {
-            return NotFound($"Pacijent with timestamp = {timestamp} not found");
-        }
-
-        return pacijent;
-    }
-
     [HttpGet("GetPacijentByEmail/{email}")]
     public async Task<IActionResult> GetPacijentByEmail(string email)
     {

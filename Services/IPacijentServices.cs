@@ -7,7 +7,6 @@ namespace StomatoloskaOrdinacija.Services
     {
         List<Pacijent> Get();
         Pacijent Get(ObjectId id);
-        Pacijent GetByTimestamp(long timestamp);
         Task<Pacijent> GetPacijentByEmailAsync(string email);
         Pacijent GetAndUpdate(ObjectId pacijentId,ObjectId pregledId);
         Pacijent Create(Pacijent pacijent);

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using Microsoft.AspNetCore.Components.Web;
+using StomatoloskaOrdinacija.DTOs;
 
 namespace StomatoloskaOrdinacija.Controllers;
 [Authorize]
@@ -36,18 +37,32 @@ public class OcenaStomatologaController : ControllerBase
             return NotFound($"Ocena with Id = {id} not found");
         return ocena;
     }
-
-    [HttpGet("byTimestamp/{timestamp}")]
-    public ActionResult<OcenaStomatologa> GetByTimestamp(long timestamp)
+    [HttpGet("getDTO/{id}")]
+    public ActionResult<OcenaStomatologaDTO> Get(string id)
     {
-        var ocena = ocenaStomatologaService.GetByTimestamp(timestamp);
+
+        if (!ObjectId.TryParse(id, out var objectId))
+        {
+            return BadRequest("Invalid ObjectId format.");
+        }
+
+        var ocena = ocenaStomatologaService.Get(objectId);
 
         if (ocena == null)
         {
-            return NotFound($"Ocena with timestamp = {timestamp} not found");
+            return NotFound($"Ocena with Id = {id} not found");
         }
 
-        return ocena;
+        var ocenaDTO = new OcenaStomatologaDTO
+        {
+            Id = ocena.Id.ToString(),
+            IdStomatologa = ocena.IdStomatologa.ToString(),
+            IdPacijenta = ocena.IdPacijenta.ToString(),
+            Datum = ocena.Datum,
+            Komentar = ocena.Komentar,
+            Ocena = ocena.Ocena
+        };
+        return ocenaDTO;
     }
 
     [HttpPost]

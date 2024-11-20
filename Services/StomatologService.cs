@@ -35,15 +35,7 @@ namespace StomatoloskaOrdinacija.Services
         {
             return _stomatolozi.Find(stomatolog => stomatolog.Id == id).FirstOrDefault();
         }
-
-         public Stomatolog GetByTimestamp(long timestamp)
-        {
-            var targetDateTime = DateTimeOffset.FromUnixTimeSeconds(timestamp).UtcDateTime;
-
-            var stomatolozi = _stomatolozi.Find(FilterDefinition<Stomatolog>.Empty).ToList();
-
-            return stomatolozi.FirstOrDefault(pregled => pregled.Id.CreationTime == targetDateTime);
-        }
+        
         public async Task<Stomatolog> GetStomatologByEmailAsync(string email)
         {
             return await _stomatolozi.Find(stomatolog => stomatolog.Email == email).FirstOrDefaultAsync();

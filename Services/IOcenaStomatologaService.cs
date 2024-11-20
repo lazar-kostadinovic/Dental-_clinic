@@ -7,7 +7,6 @@ namespace StomatoloskaOrdinacija.Services
     {
         List<OcenaStomatologa> Get();
         OcenaStomatologa Get(ObjectId id);
-        OcenaStomatologa GetByTimestamp(long timestamp);
         OcenaStomatologa Create(OcenaStomatologa ocena);
         void Update(ObjectId id, OcenaStomatologa ocena);
         void Remove(ObjectId id);
