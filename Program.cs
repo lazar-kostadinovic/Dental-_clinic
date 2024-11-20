@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.FileProviders;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -94,6 +96,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "assets")),
+    RequestPath = "/assets"
+});
+
 
 app.UseCors("CORS"); 
 

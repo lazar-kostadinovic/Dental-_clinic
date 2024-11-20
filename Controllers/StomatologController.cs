@@ -38,6 +38,7 @@ public class StomatologController : ControllerBase
         var stomatoloziDTO = stomatolozi.Select(stomatolog => new StomatologDTO
         {
             Id = stomatolog.Id.ToString(),
+            Slika = stomatolog.Slika,
             Ime = stomatolog.Ime,
             Prezime = stomatolog.Prezime,
             Adresa = stomatolog.Adresa,
@@ -85,6 +86,7 @@ public class StomatologController : ControllerBase
         var stomatologDTO = new StomatologDTO
         {
             Id = stomatolog.Id.ToString(),
+            Slika = stomatolog.Slika,
             Ime = stomatolog.Ime,
             Prezime = stomatolog.Prezime,
             Adresa = stomatolog.Adresa,
@@ -127,6 +129,7 @@ public class StomatologController : ControllerBase
         var stomatologDTO = new StomatologDTO
         {
             Id = stomatolog.Id.ToString(),
+            Slika = stomatolog.Slika,
             Ime = stomatolog.Ime,
             Prezime = stomatolog.Prezime,
             BrojTelefona = stomatolog.BrojTelefona,

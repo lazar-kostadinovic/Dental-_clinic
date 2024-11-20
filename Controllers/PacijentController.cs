@@ -59,6 +59,7 @@ public class PacijentController : ControllerBase
         var pacijentDTO = new PacijentDTO
         {
             Id = pacijent.Id.ToString(),
+            Slika = pacijent.Slika,
             Ime = pacijent.Ime,
             Prezime = pacijent.Prezime,
             Adresa = pacijent.Adresa,
@@ -96,6 +97,7 @@ public class PacijentController : ControllerBase
         var pacijentDTO = new PacijentDTO
         {
             Id = pacijent.Id.ToString(),
+            Slika = pacijent.Slika,
             Ime = pacijent.Ime,
             Prezime = pacijent.Prezime,
             Adresa = pacijent.Adresa,
@@ -122,6 +124,65 @@ public class PacijentController : ControllerBase
 
         return CreatedAtAction(nameof(Get), new { id = pacijent.Id }, pacijent);
     }
+
+    [HttpPut("addOrUpdateSlika/{id}")]
+    public IActionResult AddOrUpdateSlika(string id, [FromBody] string slikaFileName)
+    {
+        if (string.IsNullOrWhiteSpace(slikaFileName))
+        {
+            return BadRequest("Naziv fajla slike ne može biti prazan.");
+        }
+
+        if (!ObjectId.TryParse(id, out var objectId))
+        {
+            return BadRequest("Invalid ObjectId format.");
+        }
+
+        var pacijent = pacijentService.Get(objectId);
+
+        if (pacijent == null)
+        {
+            return NotFound($"Pacijent with Id = {id} not found");
+        }
+
+        var result = pacijentService.AddOrUpdateSlika(objectId, slikaFileName);
+
+        if (!result)
+        {
+            return StatusCode(500, "Ažuriranje slike nije uspelo.");
+        }
+
+        return Ok($"Slika uspešno ažurirana za pacijenta sa Id = {id}.");
+    }
+
+    [HttpPost("uploadSlika/{id}")]
+    public IActionResult UploadSlika(string id, IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest("File is empty.");
+        }
+
+        var patient = pacijentService.Get(new ObjectId(id));
+        if (patient == null)
+        {
+            return NotFound($"Pacijent with Id = {id} not found.");
+        }
+    
+        var fileName = $"{Guid.NewGuid()}_{file.FileName}";
+        var filePath = Path.Combine("wwwroot", "assets", fileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            file.CopyTo(stream);
+        }
+
+        patient.Slika = fileName;
+        pacijentService.Update(patient.Id, patient);
+
+        return Ok(new { fileName });
+    }
+
 
     [HttpPut("{email}/{adresa}/{brojTelefona}/{newEmail}")]
     public async Task<ActionResult> Put(string email, string adresa, string brojTelefona, string newEmail)

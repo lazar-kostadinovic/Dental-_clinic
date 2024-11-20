@@ -9,6 +9,9 @@ namespace StomatoloskaOrdinacija.Models
     {
         [BsonId]
         public ObjectId Id { get; set; }
+        [BsonElement("Slika")]
+        public string Slika { get; set; }
+
         [BsonElement("Ime")]
         public string Ime { get; set; }
         [BsonElement("Prezime")]
@@ -30,7 +33,7 @@ namespace StomatoloskaOrdinacija.Models
 
     public enum UserRole
     {
-        Pacijent, 
+        Pacijent,
         Stomatolog
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mArNPK2KQ72eQ1stDb2o1u8fUIeKSRG/+B25rGXa7Jz1Zr9tnydSIUIYj+//PXOsOEeOeAaacINJx5pd6mrDEg==",
+  "dgSpecHash": "X1idlljSae8keAUQVRLN+NS7K3y4OC9oX5xqZLE/9wKVEZ0WFk8SDqsIc+eAM/0Eh5X5gPf5dUzyW7sE/5HOfQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\StomatoloskaOrdinacija.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,11 @@
     "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.2\\microsoft.aspnetcore.openapi.8.0.2.nupkg.sha512",
     "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.bcl.timeprovider\\8.0.1\\microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.0\\microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.0\\microsoft.extensions.fileproviders.physical.9.0.0.nupkg.sha512",
+    "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.0\\microsoft.extensions.filesystemglobbing.9.0.0.nupkg.sha512",
     "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
+    "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
     "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.1.2\\microsoft.identitymodel.abstractions.8.1.2.nupkg.sha512",
     "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.1.2\\microsoft.identitymodel.jsonwebtokens.8.1.2.nupkg.sha512",
     "C:\\Users\\Lazar\\.nuget\\packages\\microsoft.identitymodel.logging\\8.1.2\\microsoft.identitymodel.logging.8.1.2.nupkg.sha512",

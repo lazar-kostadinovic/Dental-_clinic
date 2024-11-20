@@ -89,10 +89,17 @@ namespace StomatoloskaOrdinacija.Services
         {
             var filter = Builders<Pacijent>.Filter.Eq(p => p.Id, pacijentId);
             var update = Builders<Pacijent>.Update.Pull(p => p.IstorijaPregleda, appointmentId);
-
             var result = _pacijenti.UpdateOne(filter, update);
-
             return result.ModifiedCount > 0;
         }
+
+        public bool AddOrUpdateSlika(ObjectId pacijentId, string slikaFileName)
+        {
+            var filter = Builders<Pacijent>.Filter.Eq(p => p.Id, pacijentId);
+            var update = Builders<Pacijent>.Update.Set(p => p.Slika, slikaFileName);
+            var result = _pacijenti.UpdateOne(filter, update);
+            return result.ModifiedCount > 0;
+        }
+
     }
 }

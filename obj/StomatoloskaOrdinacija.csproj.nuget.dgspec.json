@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[8.0.2, )"
             },
+            "Microsoft.Extensions.FileProviders.Physical": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[3.0.0, )"

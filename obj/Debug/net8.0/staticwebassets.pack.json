@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\15461933-83f9-4e6b-a79e-59e7f1532e08_slika2.jpeg",
+      "PackagePath": "staticwebassets\\assets\\15461933-83f9-4e6b-a79e-59e7f1532e08_slika2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\4c80c7e4-ab54-49b7-9a08-f9a9a4352c2b_slika2.jpeg",
+      "PackagePath": "staticwebassets\\assets\\4c80c7e4-ab54-49b7-9a08-f9a9a4352c2b_slika2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\5ba4f56c-4095-4661-9dd8-2b6f314a67fd_slika1.jpg",
+      "PackagePath": "staticwebassets\\assets\\5ba4f56c-4095-4661-9dd8-2b6f314a67fd_slika1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\c285aef3-82bb-45e7-a318-99b758514fc6_slika3.jpeg",
+      "PackagePath": "staticwebassets\\assets\\c285aef3-82bb-45e7-a318-99b758514fc6_slika3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\c4630cef-45f3-45d4-9084-6f7f3be6caaf_slika1.jpg",
+      "PackagePath": "staticwebassets\\assets\\c4630cef-45f3-45d4-9084-6f7f3be6caaf_slika1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\df2ab8f2-d1c4-4823-83bd-3578e06f6df6_slika3.jpeg",
+      "PackagePath": "staticwebassets\\assets\\df2ab8f2-d1c4-4823-83bd-3578e06f6df6_slika3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\e051a936-08c5-4645-a4f4-6f651972ed4f_slika2.jpeg",
+      "PackagePath": "staticwebassets\\assets\\e051a936-08c5-4645-a4f4-6f651972ed4f_slika2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\ea491f54-8f21-4526-8eb4-86f68491ef79_slika2.jpeg",
+      "PackagePath": "staticwebassets\\assets\\ea491f54-8f21-4526-8eb4-86f68491ef79_slika2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\fba749b2-eb21-4576-9488-c30d0674fd7f_slika1.jpg",
+      "PackagePath": "staticwebassets\\assets\\fba749b2-eb21-4576-9488-c30d0674fd7f_slika1.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.StomatoloskaOrdinacija.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.StomatoloskaOrdinacija.props",
+      "PackagePath": "build\\StomatoloskaOrdinacija.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.StomatoloskaOrdinacija.props",
+      "PackagePath": "buildMultiTargeting\\StomatoloskaOrdinacija.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.StomatoloskaOrdinacija.props",
+      "PackagePath": "buildTransitive\\StomatoloskaOrdinacija.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
