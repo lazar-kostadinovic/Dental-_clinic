@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OhKJtGf50AVCNpo0eCq4fj2ORCdH6OZR7QwOKsy/l5k=",
+  "Hash": "q8OIn5k/Fiun5VhebBnXPPxrjCgRg5+hT1rZrVqHfhA=",
   "Source": "StomatoloskaOrdinacija",
   "BasePath": "_content/StomatoloskaOrdinacija",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\5ba4f56c-4095-4661-9dd8-2b6f314a67fd_slika1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\9912ea00-184c-4d88-b63a-57d210a94e4f_slika2.jpeg",
+      "SourceId": "StomatoloskaOrdinacija",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\",
+      "BasePath": "_content/StomatoloskaOrdinacija",
+      "RelativePath": "assets/9912ea00-184c-4d88-b63a-57d210a94e4f_slika2.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\9912ea00-184c-4d88-b63a-57d210a94e4f_slika2.jpeg"
     },
     {
       "Identity": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\c285aef3-82bb-45e7-a318-99b758514fc6_slika3.jpeg",
@@ -186,6 +205,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\fba749b2-eb21-4576-9488-c30d0674fd7f_slika1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\ffe0fdc7-f87e-4f5f-9a42-278db490a3b6_slika1.jpg",
+      "SourceId": "StomatoloskaOrdinacija",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\",
+      "BasePath": "_content/StomatoloskaOrdinacija",
+      "RelativePath": "assets/ffe0fdc7-f87e-4f5f-9a42-278db490a3b6_slika1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\ffe0fdc7-f87e-4f5f-9a42-278db490a3b6_slika1.jpg"
     }
   ]
 }

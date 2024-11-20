@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components.Web;
 using StomatoloskaOrdinacija.DTOs;
 
 namespace StomatoloskaOrdinacija.Controllers;
-[Authorize]
+// [Authorize]
 [ApiController]
 [Route("[controller]")]
 public class OcenaStomatologaController : ControllerBase
@@ -74,7 +74,7 @@ public class OcenaStomatologaController : ControllerBase
     }
 
     [HttpPost("{idStomatologa}/{idPacijenta}/{komentar}/{ocena}")]
-    public IActionResult ScheduleAppointment(ObjectId idStomatologa, ObjectId idPacijenta, string komentar, int ocena)
+    public IActionResult AddReview(ObjectId idStomatologa, ObjectId idPacijenta, string komentar, int ocena)
     {
         var ocenaStomatologa = new OcenaStomatologa
         {

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\assets\\5ba4f56c-4095-4661-9dd8-2b6f314a67fd_slika1.jpg"
     },
     {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\9912ea00-184c-4d88-b63a-57d210a94e4f_slika2.jpeg",
+      "PackagePath": "staticwebassets\\assets\\9912ea00-184c-4d88-b63a-57d210a94e4f_slika2.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\c285aef3-82bb-45e7-a318-99b758514fc6_slika3.jpeg",
       "PackagePath": "staticwebassets\\assets\\c285aef3-82bb-45e7-a318-99b758514fc6_slika3.jpeg"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\fba749b2-eb21-4576-9488-c30d0674fd7f_slika1.jpg",
       "PackagePath": "staticwebassets\\assets\\fba749b2-eb21-4576-9488-c30d0674fd7f_slika1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Lazar\\Desktop\\StomatoloskaOrdinacija\\wwwroot\\assets\\ffe0fdc7-f87e-4f5f-9a42-278db490a3b6_slika1.jpg",
+      "PackagePath": "staticwebassets\\assets\\ffe0fdc7-f87e-4f5f-9a42-278db490a3b6_slika1.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.StomatoloskaOrdinacija.Microsoft.AspNetCore.StaticWebAssets.props",
