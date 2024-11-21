@@ -31,6 +31,12 @@ namespace StomatoloskaOrdinacija.Services
             return _pregledi.Find(pregled => pregled.Id == id).FirstOrDefault();
         }
 
+        public List<Pregled> GetByStomatologId(ObjectId stomatologId)
+        {
+            var filter = Builders<Pregled>.Filter.Eq(p => p.IdStomatologa, stomatologId);
+            return _pregledi.Find(filter).ToList();
+        }
+
         public void Remove(ObjectId id)
         {
             _pregledi.DeleteOne(pregled => pregled.Id == id);

@@ -13,9 +13,14 @@ public class StomatologController : ControllerBase
 {
     private readonly IStomatologService stomatologService;
 
-    public StomatologController(IStomatologService stomatologService, IConfiguration config)
+    private readonly IPacijentService pacijentService;
+    private readonly IPregledService pregledService;
+
+    public StomatologController(IStomatologService stomatologService, IPacijentService pacijentService, IPregledService pregledService, IConfiguration config)
     {
         this.stomatologService = stomatologService;
+        this.pacijentService = pacijentService;
+        this.pregledService = pregledService;
     }
 
     [AllowAnonymous]
@@ -198,12 +203,31 @@ public class StomatologController : ControllerBase
 
         if (stomatolog == null)
         {
-            return NotFound($"Stomatolog with Id = {id} not found");
+            return NotFound(new { message = $"Stomatolog with Id = {id} not found" });
+        }
+
+        var pregledi = pregledService.GetByStomatologId(id);
+
+        foreach (var pregled in pregledi)
+        {
+            var patientId = pregled.IdPacijenta;
+
+            if (!pacijentService.RemoveAppointment(patientId, pregled.Id))
+            {
+                return NotFound(new { message = $"Failed to remove appointment with Id = {pregled.Id} from patient with Id = {patientId}" });
+            }
+
+            if (!stomatologService.RemoveAppointment(id, pregled.Id))
+            {
+                return NotFound(new { message = $"Failed to remove appointment with Id = {pregled.Id} from stomatolog with Id = {id}" });
+            }
+
+            pregledService.Remove(pregled.Id);
         }
 
         stomatologService.Remove(stomatolog.Id);
 
-        return Ok($"Stomatolog with Id = {id} deleted");
+        return Ok(new { message = $"Stomatolog with Id = {id} and all associated appointments deleted" });
     }
 
     [HttpPost("register")]

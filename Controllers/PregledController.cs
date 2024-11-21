@@ -82,14 +82,7 @@ public class PregledController : ControllerBase
                 return NotFound($"Stomatolog with Id = {idStomatologa} not found");
             }
             var allTimeSlots = new List<string> { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00" };
-
             var existingAppointments = pregledService.GetStomatologAppointmentsInDateRange(idStomatologa, datum, datum.AddDays(1));
-            // Console.WriteLine("Existing Appointments:");
-            // foreach (var appointment in existingAppointments)
-            // {
-            //     Console.WriteLine($"Datum: {appointment.Datum}, Opis: {appointment.Opis}"); 
-            // }
-
             var availableTimeSlots = allTimeSlots.Except(existingAppointments.Select(appointment => appointment.Datum.ToUniversalTime().ToString("HH:mm")));
             // var availableTimeSlots = allTimeSlots.Except(existingAppointments.Select(appointment => appointment.Datum.ToString("HH:mm")));
 
