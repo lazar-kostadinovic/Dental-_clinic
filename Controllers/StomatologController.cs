@@ -35,7 +35,7 @@ public class StomatologController : ControllerBase
     {
         var stomatolozi = stomatologService.Get();
 
-        if (stomatolozi == null || !stomatolozi.Any())
+        if (stomatolozi == null)
         {
             return NotFound("Nema stomatologa u sistemu.");
         }
@@ -147,7 +147,6 @@ public class StomatologController : ControllerBase
         return stomatoloziBySpecijalizacija;
     }
 
-
     [HttpPost("{ime}/{prezime}/{adresa}/{brojTelefona}/{email}/{specijalizacija}")]
     public ActionResult<Stomatolog> Post(string ime, string prezime, string adresa, string brojTelefona, string email, Specijalizacija specijalizacija)
     {
@@ -194,6 +193,35 @@ public class StomatologController : ControllerBase
         stomatologService.Update(id, stomatolog);
 
         return NoContent();
+    }
+
+    [AllowAnonymous]
+    [HttpPost("uploadSlika/{id}")]
+    public IActionResult UploadSlika(string id, IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest("File is empty.");
+        }
+
+        var dentist = stomatologService.Get(new ObjectId(id));
+        if (dentist == null)
+        {
+            return NotFound($"Pacijent with Id = {id} not found.");
+        }
+    
+        var fileName = $"{Guid.NewGuid()}_{file.FileName}";
+        var filePath = Path.Combine("wwwroot", "assets", fileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            file.CopyTo(stream);
+        }
+
+        dentist.Slika = fileName;
+        stomatologService.Update(dentist.Id, dentist);
+
+        return Ok(new { fileName });
     }
 
     [HttpDelete("{id}")]
