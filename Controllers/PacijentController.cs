@@ -70,6 +70,17 @@ public class PacijentController : ControllerBase
         };
         return pacijentDTO;
     }
+    [HttpGet("basic")]
+    public IActionResult GetBasicPatientInfo()
+    {
+        var patients = pacijentService.Get()
+        .Select(p=> new
+        {
+            Id=p.Id.ToString(),
+            Name = $"{p.Ime} {p.Prezime}"
+        }).ToList();
+        return Ok(patients);
+    }
 
     [HttpGet("GetPacijentByEmail/{email}")]
     public async Task<IActionResult> GetPacijentByEmail(string email)
